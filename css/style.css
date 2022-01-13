@@ -92,7 +92,7 @@ span.little-btn {
     margin-top: 8px;
     display: flex;
     justify-content: space-between;
-    padding: 12px;
+    padding: 12px 12px 0 12px;
     width: 460px;
     border-radius: 6px;
     border: 1px solid #989898;

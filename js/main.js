@@ -34,6 +34,12 @@ creatingHandlersForMany(ELEMENTS.INPUTS, "keypress", addNewTask);
 creatingHandlersForMany(ELEMENTS.CHECK, "click", statusSwitcher);
 creatingHandlersForMany(ELEMENTS.DELETE_TASK, "click", deleteTask);
 
+function NewTask() {
+    this.id = ++arguments[0];
+    this.name = arguments[1];
+    this.status = arguments[2];
+    this.priority = arguments[3];
+}
 
 function addNewTask(event) {
     let element;
@@ -54,13 +60,8 @@ function addNewTask(event) {
 
     if (element.value === "") return;
 
-    newItem = {
-        id: ++id,
-        name: element.value,
-        status: STATUS[0],
-        priority: choosenPrioirity,
-    };
-
+    newItem = new NewTask(id, element.value, STATUS[0], choosenPrioirity);
+   
     list.push(newItem);
 
     createTaskNode(newItem);
